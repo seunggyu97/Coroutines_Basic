@@ -20,14 +20,15 @@ class MainActivity : AppCompatActivity() {
             tvCount.text = count++.toString()
         }
         btnDownloadUserData.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch{
-                downloadUserData()
+            CoroutineScope(Dispatchers.Main).launch{
+                tvUserMessage.text = UserDataManager().getTotalUserCount().toString()
             }
         }
     }
 
     private suspend fun downloadUserData() {
         for (i in 1..200000) {
+            // 메인 스레드로 전환
             withContext(Dispatchers.Main){
                 tvUserMessage.text = "Downloading user $i in ${Thread.currentThread().name}";
             }
