@@ -1,5 +1,6 @@
 package com.anushka.coroutinesdemo1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 //                tvUserMessage.text = UserDataManager().getTotalUserCount().toString()
                 tvUserMessage.text = UserDataManager2().getTotalUserCount().toString()
             }
+        }
+        btnSubActivity.setOnClickListener{
+            var intent: Intent = Intent(this, SubActivity::class.java)
+            startActivity(intent)
         }
     }
 
