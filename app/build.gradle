@@ -36,6 +36,8 @@ dependencies {
     def arch_version = '2.2.0-alpha04'
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
